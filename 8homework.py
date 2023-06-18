@@ -6,13 +6,13 @@
 # Показывает информацию в файле
 def readfile(phonebook):
     print("\nФ.И. | Телефон")
-    with open(phonebook, "r", encoding="utf-8") as file:
+    with open(phonebook.txt, "r", encoding="utf-8") as file:
         print(file.read())
     print("")
 
 # Записывает информацию в файл
 def writes_information(phonebook):
-    with open(phonebook, "r", encoding="utf-8") as file:
+    with open(phonebook.txt, "r", encoding="utf-8") as file:
         book_file = file.read()
     num = len(book_file.split("\n"))
     with open(phonebook, "a", encoding="utf-8") as file: 
@@ -24,7 +24,7 @@ def writes_information(phonebook):
 # Изменяет информацию из файла
 def changes_information(phonebook):
     print("\nФ.И. | Телефон")
-    with open(phonebook, "r", encoding='utf-8') as file:
+    with open(phonebook.txt, "r", encoding='utf-8') as file:
         phone_book = file.read()
     print(phone_book)
     print("")
@@ -42,7 +42,7 @@ def changes_information(phonebook):
     edited_line = f"{fio} | {phone}"
     phone_book_lines[index_delete_data] = edited_line
     print(f"Запись - {edit_phone_book_lines}, изменена на - {edited_line}\n")
-    with open(phonebook, "w", encoding='utf-8') as file:
+    with open(phonebook.txt, "w", encoding='utf-8') as file:
         file.write("\n".join(phone_book_lines))
         
 def main():
